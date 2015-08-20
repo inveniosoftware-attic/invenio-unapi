@@ -53,7 +53,7 @@ before_install:
   - "python requirements.py --extras=$REXTRAS --level=dev > .travis-devel-requirements.txt"
 
 install:
-  - "travis_retry pip install Invenio"
+  - "travis_retry pip install -e git+https://github.com/inveniosoftware/invenio.git#egg=invenio"
   - "travis_retry pip install -r .travis-$REQUIREMENTS-requirements.txt --allow-all-external"
   - "travis_retry pip install -e .[$REXTRAS]"
 
@@ -72,7 +72,7 @@ deploy:
   provider: pypi
   user: jirikuncar
   password:
-    secure: kYhX1qA8lj34RlZXYWDNkrjD7+yjSZ6n1/DKx+njz6Wj2aOm3eZGyqRhii4yxIR9UeJIqK94cLH4zEpnJhuWbcmvFsbiHgZtu43q7LoNXPX8IBSYLaWBFCJ7bZ37CJX4Qbef6+vdthLeba6DBejKvdoVFnynNjy5iGNQHSzcwKU11rnJx8phfN4O2y/gf+Pm0HZI93wtLWA2Cxaftk7IKbhfU9zkwGnRluZzzInRKWPvIe3/esssqKtx1EjwOVlNgXKGlJEGt58dweQeezvSimXd4Lt2HVWVT+wH/m8NpdDXt7/8XPFz7a3wVXv7Lvx4oCpK0mUXWbUCP+5JBmdIHRW2r59lR+wNTHrzn0dOys4a5vRpNglmrYAytXEKCDuNb6WRUwbUjEqHabXXCXFiJKWjMMW2Sjh2a3etVJT+IX8ForzXcgJgNlotzwIVNbjdbqoOSPygEZhp/iql4ZqLe/vB9+JaQ9FCmuqElUOKeSljZuqILQ6f6AUXb1mSJWBPfp+UrNWT/AC7Nh+wf+w5+/ygeJNeKGIxZrjdK55CF5hFlVMrsMYw1GSx3bsUTi5Qqd9hLVjNBvP8Zq0HgQOWK9HlHiPeul/EJCfbVHpLHUwyEVhq0w0UlbvzgRX9CTRdVnZvvaTSP/7FIpOss5wD3zkDbAtZlSp1N9dB/Ee8n/M=
+    secure: KKAWRCVU5wngo1IBhPKZc4JNTmXnVIQO8sYKYnzY0q6IKFAJorWw5tbNgDwynB405ZkDPzOk8mgBaDySxoOzonu8To0iLm/H6zgrCEeflO9/boCdocFs2Ho14cfaILLL1yxQMYH7m1i1idgr1BFPOUUfShh1YHbzsZwzXfJLudgmGnNSG3QDlsRHqjSqNFqX30RSKHqT4WayQOOQLv3V33QNq9Vx8laFLmxZmRj8AmtUBHBSbMT7yx4UQ7SVOIZQexnJKs7IDKsdU+qLGXz+4EoHfeTFAR+BNPxfaH2yc0wGuzDK6eMY8FjO637bLA53pfJ/FpSwTxhJHlmQ3DRRfJ3zs58iEx7a24tzo3jiEaLCrM46EeX5S0Uya2/Y/ijAqnnwUQJvRbrT0LcVnyK8CaCcBqMUExUxBROHzVCutpwvUe3rxC74IgSP0cUDW+/DoLazZfmBfj6nLhln/bI0abb+/VZzRlyw3L3/pw/p8B/3fcru2OkeogRzG7h4tuqEqcUf0jAV/nVHLrKDpnWxXcnf+WqRgKPYQxrmsUnphFVPiIoE+TdfUSqPe3/H/v0l+UZV3bXrrNxmhCMVqp5i7GY9CjKcid77hSCMEVOc7NgvFWsFTaCm1RyUaktxeQJYuId8FpHkHTxO0l+aQQRHbhW9Exaez7yHO0x1eoG5EGU=
   distributions: "compile_catalog sdist bdist_wheel"
   on:
     tags: true
