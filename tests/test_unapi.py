@@ -23,7 +23,7 @@ from __future__ import absolute_import
 
 from flask import url_for
 
-from invenio.testsuite import InvenioTestCase, make_test_suite, run_test_suite
+from invenio_testing import InvenioTestCase
 
 
 class UnAPIMixin(InvenioTestCase):
@@ -53,8 +53,3 @@ class TestUnAPIEndpoint(UnAPIMixin):
         response = self.client.get(
             url_for('unapi.index', id=1, format='marcxml'))
         assert response.status_code == 302
-
-TEST_SUITE = make_test_suite(TestUnAPIEndpoint)
-
-if __name__ == "__main__":
-    run_test_suite(TEST_SUITE)

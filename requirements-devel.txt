@@ -24,3 +24,5 @@
 
 -e git+git://github.com/inveniosoftware/invenio-base.git#egg=invenio-base
 -e git+git://github.com/inveniosoftware/invenio-formatter.git#egg=invenio-formatter
+-e git+git://github.com/inveniosoftware/invenio-testing.git#egg=invenio-testing
+
