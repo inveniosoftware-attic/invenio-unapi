@@ -51,15 +51,12 @@ before_install:
   - "python requirements.py --extras=$REXTRAS --level=min > .travis-lowest-requirements.txt"
   - "python requirements.py --extras=$REXTRAS --level=pypi > .travis-release-requirements.txt"
   - "python requirements.py --extras=$REXTRAS --level=dev > .travis-devel-requirements.txt"
+  - "mkdir -p ${VIRTUAL_ENV}/var/invenio.base-instance/"
+  - "cp .travis.invenio.cfg ${VIRTUAL_ENV}/var/invenio.base-instance/invenio.cfg"
 
 install:
-  - "travis_retry pip install -e git+https://github.com/inveniosoftware/invenio.git#egg=invenio"
   - "travis_retry pip install -r .travis-$REQUIREMENTS-requirements.txt --allow-all-external"
   - "travis_retry pip install -e .[$REXTRAS]"
-
-before_script:
-  - "inveniomanage database init --yes-i-know || echo ':('"
-  - "inveniomanage database create --quiet || echo ':('"
 
 script:
   - "check-manifest --ignore .travis-\\*-requirements.txt"
