@@ -24,6 +24,17 @@
 Changes
 =======
 
-Version 0.1.0 (release 2015-08-20)
+Version 0.1.1 (release 2015-10-07):
+-----------------------------------
+
+- Upgrades the minimum version of invenio-base to 0.3.0.
+- Removes dependencies to invenio.testsuite and replaces them with
+  invenio_testing.
+- Removes calls to PluginManager consider_setuptools_entrypoints()
+  removed in PyTest 2.8.0.
+- Adds missing `invenio_base` dependency.
+
+Version 0.1.0 (release 2015-08-20):
+-----------------------------------
 
 - Initial public release.

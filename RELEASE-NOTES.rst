@@ -1,30 +1,35 @@
 ======================
- Invenio-UnAPI v0.1.0
+ Invenio-UnAPI v0.1.1
 ======================
 
-Invenio-UnAPI v0.1.0 was released on August 20, 2015.
+Invenio-UnAPI v0.1.1 was released on October 7, 2015.
 
 About
 -----
 
 Invenio module that implements UnAPI service hooks.
 
-*This is an experimental development preview release.*
+*This is an experimental developer preview release.*
 
-What's new
-----------
+Bug fixes
+---------
 
-- Initial public release.
+- Upgrades the minimum version of invenio-base to 0.3.0.
+- Removes dependencies to invenio.testsuite and replaces them with
+  invenio_testing.
+- Removes calls to PluginManager consider_setuptools_entrypoints()
+  removed in PyTest 2.8.0.
+- Adds missing `invenio_base` dependency.
 
 Installation
 ------------
 
-   $ pip install invenio-unapi==0.1.0
+   $ pip install invenio-unapi==0.1.1
 
 Documentation
 -------------
 
-   http://invenio-unapi.readthedocs.org/en/v0.1.0
+   http://invenio-unapi.readthedocs.org/en/v0.1.1
 
 Happy hacking and thanks for flying Invenio-UnAPI.
 
